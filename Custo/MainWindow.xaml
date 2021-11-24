@@ -17,7 +17,6 @@
         <Label Content="SENHA" HorizontalAlignment="Left" Margin="37,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.482,0.618" FontSize="20" FontWeight="Bold"/>
         <Label Content="SISTEMA PARA GERAÇÃO DE CUSTO POR OPERAÇÃO DE COSTURA" Margin="0,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="18" Foreground="Black" FontFamily="Adobe Caslon Pro Bold" Background="{x:Null}"/>
         <Button x:Name="btnEntrar" Content="ENTRAR" HorizontalAlignment="Left" Margin="166,250,0,0" VerticalAlignment="Top" Width="154" Height="29" FontSize="16" FontWeight="Bold" Background="#FFCCF6FF" BorderBrush="#FFCCF6FF" Click="btnEntrar_Click"/>
-
     </Grid>
 </Window>
 
