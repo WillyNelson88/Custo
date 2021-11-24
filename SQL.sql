@@ -1,8 +1,7 @@
-﻿CREATE TABLE operacao
-GO
-
+﻿CREATE DATABASE custo
 USE custo
 
+CREATE TABLE operacao
 (	
 	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
 	data_criacao VARCHAR(10) NOT NULL,
@@ -10,11 +9,11 @@ USE custo
 	custo DECIMAL(10,2) NOT NULL,
 	observacoes VARCHAR(100)
 )
-GO
 
 INSERT INTO operacao (data_criacao, operacao, custo, observacoes) VALUES ('11/11/2021', 'Calça Basica -R$0,82 corte', 12.90, 'Base costura');
 INSERT INTO operacao (data_criacao, operacao, custo, observacoes) VALUES ('11/11/2021', 'Corte', 0.82, 'corte');
 INSERT INTO operacao (data_criacao, operacao, custo, observacoes) VALUES ('11/11/2021', 'Etiqueta Ellus', 0.68, 'Etiqueta de cós interno');
+
 
 CREATE TABLE cliente	
 (	
@@ -33,8 +32,6 @@ CREATE TABLE montar_custo
 	fase VARCHAR(20) NOT NULL,
 	total DECIMAL (10,2) NOT NULL
 )	
-	
-GO
 
 CREATE TABLE modelo	
 (	
@@ -47,8 +44,6 @@ CREATE TABLE modelo
 	preco DECIMAL(10,2) NOT NULL
 
 )	
-	
-GO
 
 CREATE TABLE cobranca	
 (	
@@ -58,7 +53,6 @@ CREATE TABLE cobranca
 	tipo VARCHAR(20) NOT NULL,	
 	preco DECIMAL (10,2) NOT NULL
 )
-GO
 
 CREATE TABLE login(
 	id INT NOT NULL PRIMARY KEY IDENTITY(1,1),
@@ -66,6 +60,8 @@ CREATE TABLE login(
 	senha VARCHAR (255) NOT NULL,
 	situacao VARCHAR(50) NOT NULL,
 )
+													
+INSERT INTO login (usuario, senha, situacao) VALUES ('admin', '$2a$12$C9pTXOXNLeP26OBluHJqlO.pVtOp5V5SzFeSSULU55Bt5sevmAELW', 'ADMIN');
 
-INSERT INTO login (usuario, senha, situacao) VALUES ('Willy', '$2a$12$C9pTXOXNLeP26OBluHJqlO.pVtOp5V5SzFeSSULU55Bt5sevmAELW', 'ADMIN');
-GO	
+/*Usuário = admin
+  Senha = 123*/
