@@ -1,0 +1,29 @@
+﻿<Window x:Class="Custo.Main"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Sistema De Custo" Height="450" Width="830"
+        WindowState="Maximized">
+
+    <Grid Margin="1,-1,-1,1">
+        <Grid.Background>
+            <ImageBrush ImageSource="/backcifrão.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="MenuPrincipal" Height="23" VerticalAlignment="Top" Background="#FFC6E8FF">
+            <MenuItem Header="CUSTOS" Click="MenuItem_Click_1" FontWeight="Bold" FontStyle="Normal"/>
+            <MenuItem Header="MONTAR CUSTO" Click="MenuItem_Click" FontWeight="Bold"/>
+            <MenuItem Header="CLIENTE" Click="MenuItem_Click_2" FontWeight="Bold"/>
+            <MenuItem Header="MODELOS" Click="MenuItem_Click_3" FontWeight="Bold"/>
+            <MenuItem Header="COBRANÇA" Click="MenuItem_Click_4" FontWeight="Bold"/>
+            <MenuItem Header="USUÁRIOS" Click="MenuItem_Click_5" FontWeight="Bold"/>
+        </Menu>
+    </Grid>
+</Window>

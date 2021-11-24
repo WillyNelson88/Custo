@@ -1,0 +1,47 @@
+﻿<Window x:Class="Custo.Cobranca"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Custo"
+        mc:Ignorable="d"
+        Title="Detalhes" Height="450" Width="857"
+        ResizeMode="CanResize">
+    <Grid Margin="0,0,1,0">
+        <Grid.Background>
+            <ImageBrush ImageSource="/costurabg.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="DataGridCobranca"
+                  Margin="10,61,17,9"
+                  IsReadOnly="True"
+                  AutoGenerateColumns="False"
+                  SelectionMode="Single">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="OC" Width="40" Binding="{Binding Path=oc}"/>
+                <DataGridTextColumn Header="TALÃO" Width="70" Binding="{Binding Path=talao}"/>
+                <DataGridTextColumn Header="CLIENTE" Width="100" Binding="{Binding Path=cliente}"/>
+                <DataGridTextColumn Header="COLEÇÃO" Width="65" Binding="{Binding Path=colecao}"/>
+                <DataGridTextColumn Header="REFERÊNCIA" Width="100" Binding="{Binding Path=referencia}"/>
+                <DataGridTextColumn Header="DESCRIÇÃO" Width="350" Binding="{Binding Path=descricao}"/>
+                <DataGridTextColumn Header="PREÇO" Width="70" Binding="{Binding Path=preco}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Content="Selecione uma coluna para buscar:" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+
+        <TextBox x:Name="txtBusca" HorizontalAlignment="Left" Margin="396,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Height="22" TextChanged="txtBusca_TextChanged" BorderBrush="Black">
+            <TextBox.Background>
+                <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
+            </TextBox.Background>
+        </TextBox>
+        <ComboBox x:Name="cbBusca" HorizontalAlignment="Left" Margin="214,17,0,0" VerticalAlignment="Top" Width="178" Loaded="cbBusca_Loaded"/>
+
+    </Grid>
+</Window>

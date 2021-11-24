@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Login.xaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="backcifrão.png" />
+    <None Remove="costurabg.png" />
+    <None Remove="LOG.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+    <PackageReference Include="iTextSharp" Version="5.5.13.2" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="backcifrão.png" />
+    <Resource Include="costurabg.png" />
+    <Resource Include="LOG.png" />
+  </ItemGroup>
+
+</Project>
