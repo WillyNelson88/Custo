@@ -146,7 +146,7 @@ namespace Custo
 
             MessageBox.Show("Custo criado com sucesso!");
 
-            this.Close(); //Fechando a aplicação porque não consegui limpar os dados da dataGrid;*/
+            this.Close();//Preciso descobrir como limpar os dados do data grid para não precisar fechar a janela quando salva;
         }
 
         //Exclui uma linha da tabela de montar os custos;

@@ -27,13 +27,7 @@
                 <GradientStop Color="Black" Offset="1"/>
             </LinearGradientBrush>
         </Grid.OpacityMask>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
+        
         <Label Content="REFERÊNCIA:" HorizontalAlignment="Left" Margin="296,22,0,0" VerticalAlignment="Top" Background="{x:Null}" Height="24" Width="86" FontWeight="Bold" />
         <Label Content="COLEÇÃO:" Margin="462,63,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="64" Height="24" FontWeight="Bold" />
         <Label Content="CLIENTE:" Margin="20,23,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="56" RenderTransformOrigin="0.58,0.557" Height="24" FontWeight="Bold" />
@@ -71,7 +65,7 @@
                   Width="686" 
                   SelectionChanged="GridOperacoes_SelectionChanged_1" FontWeight="Bold">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=Id}"/>
                 <DataGridTextColumn Header="OPERAÇÃO" Width="250" Binding="{Binding Path=Operacao}"/>
                 <DataGridTextColumn Header="CUSTO" Width="80" Binding="{Binding Path=Custo}"/>
                 <DataGridTextColumn Header="OBSERVAÇÕES" Width="306" Binding="{Binding Path=Observacoes}"/>
@@ -88,7 +82,7 @@
                   HorizontalAlignment="Left" 
                   Width="580" FontWeight="Bold" Height="246" VerticalAlignment="Top">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="ID" Width="50" Binding="{Binding Path=Id}"/>
                 <DataGridTextColumn Header="OPERAÇÃO" Width="250" Binding="{Binding Path=Operacao}"/>
                 <DataGridTextColumn Header="FASE" Width="160" Binding="{Binding Path=Fase}"/>
                 <DataGridTextColumn Header="X" Width="30" Binding="{Binding Path=Freq}"/>

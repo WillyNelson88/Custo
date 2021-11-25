@@ -27,7 +27,7 @@
             </Label.OpacityMask>
         </Label>
         <Label Content="RAZÃO SOCIAL:" Margin="332,10,363,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Label Content="ENDEREÇO:" Margin="10,47,711,0" VerticalAlignment="Top" FontWeight="Bold"/>
+        <Label Content="ENDEREÇO:" Margin="10,47,698,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
         <TextBox x:Name="txtCli" Margin="89,14,0,0" TextWrapping="Wrap" FontSize="16" VerticalAlignment="Top" Height="26" HorizontalAlignment="Left" Width="196" BorderBrush="Black">
             <TextBox.Background>
@@ -41,9 +41,9 @@
             </TextBox.Background>
         </TextBox>
         <TextBox x:Name="txtEndereco" Margin="89,50,10,0" TextWrapping="Wrap" FontSize="16" VerticalAlignment="Top" Height="26" BorderBrush="Black">
-        <TextBox.Background>
-            <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
-        </TextBox.Background>
+            <TextBox.Background>
+                <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
+            </TextBox.Background>
         </TextBox>
 
         <DataGrid x:Name="DataGridCliente" Margin="10,146,10,10" AutoGenerateColumns="False" GridLinesVisibility="Horizontal" IsReadOnly="True" SelectionMode="Single" SelectionChanged="DataGridCliente_SelectionChanged" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
@@ -55,7 +55,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        
+
         <Button x:Name="btnIncluir" Content="ADICIONAR" Margin="10,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="BtnIncluir_Click" Background="#FF7FC1EE" FontWeight="Bold" />
         <Button x:Name="btnEditar" Content="EDITAR" Margin="138,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="BtnEditar_Click" Background="#FF7FC1EE" FontWeight="Bold" />
         <Button x:Name="btnExcluir" Content="EXCLUIR" Margin="268,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="BtnExcluir_Click" Background="#FF7FC1EE" FontWeight="Bold" />

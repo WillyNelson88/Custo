@@ -29,7 +29,7 @@
                 <DataGridTextColumn Header="CLIENTE" Width="100" Binding="{Binding Path=Cliente}"/>
                 <DataGridTextColumn Header="COLEÇÃO" Width="65" Binding="{Binding Path=Colecao}"/>
                 <DataGridTextColumn Header="REFERÊNCIA" Width="100" Binding="{Binding Path=Referencia}"/>
-                <DataGridTextColumn Header="DESCRIÇÃO" Width="350" Binding="{Binding Path=Descricao}"/>
+                <DataGridTextColumn Header="DESCRIÇÃO" Width="360" Binding="{Binding Path=Descricao}"/>
                 <DataGridTextColumn Header="PREÇO" Width="70" Binding="{Binding Path=Preco}"/>
             </DataGrid.Columns>
         </DataGrid>
