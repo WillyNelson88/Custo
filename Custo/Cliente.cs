@@ -8,7 +8,7 @@ namespace Custo
 {
     class Cliente
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string Cli { get; set; }
 

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Custo
 {
-    class Operacoes
+    class Processo
     {
-        public int id { get; set; }
+        public int Id { get; set; }
 
         public string Data { get; set; }
 

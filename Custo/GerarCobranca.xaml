@@ -100,11 +100,11 @@
             </TextBox.Background>
         </TextBox>
 
-        <ComboBox x:Name="cbTipo" HorizontalAlignment="Left" Margin="349,0,0,67" Width="203" RenderTransformOrigin="-0.172,0.488" Loaded="cbTipo_Loaded" Height="22" VerticalAlignment="Bottom" FontSize="14"/>
+        <ComboBox x:Name="CbTipo" HorizontalAlignment="Left" Margin="349,0,0,67" Width="203" RenderTransformOrigin="-0.172,0.488" Loaded="CbTipo_Loaded" Height="22" VerticalAlignment="Bottom" FontSize="14"/>
 
 
-        <Button x:Name="btnIncluir" Content="INCLUIR" HorizontalAlignment="Left" Margin="477,75,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="btnIncluir_Click" Background="#FF7FC1EE" FontWeight="Bold"/>
-        <Button x:Name="btnFinalizar" Content="FINALIZAR" HorizontalAlignment="Left" Margin="473,0,0,31" Width="77" Click="btnFinalizar_Click" Height="25" VerticalAlignment="Bottom" Background="#FF7FC1EE" FontWeight="Bold"/>
+        <Button x:Name="BtnIncluir" Content="INCLUIR" HorizontalAlignment="Left" Margin="477,75,0,0" VerticalAlignment="Top" Width="75" Height="25" Click="BtnIncluir_Click" Background="#FF7FC1EE" FontWeight="Bold"/>
+        <Button x:Name="BtnFinalizar" Content="FINALIZAR" HorizontalAlignment="Left" Margin="473,0,0,31" Width="77" Click="BtnFinalizar_Click" Height="25" VerticalAlignment="Bottom" Background="#FF7FC1EE" FontWeight="Bold"/>
     </Grid>
 
 </Window>

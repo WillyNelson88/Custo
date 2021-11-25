@@ -24,15 +24,15 @@
                   IsReadOnly="True"
                   AutoGenerateColumns="False" FontWeight="Bold">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Width="30" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="ID" Width="30" Binding="{Binding Path=Id}"/>
                 <DataGridTextColumn Header="OPERAÇÃO" Width="242" Binding="{Binding Path=Operacao}"/>
                 <DataGridTextColumn Header="X" Width="30" Binding="{Binding Path=Freq}"/>
                 <DataGridTextColumn Header="R$ TOTAL" Width="70" Binding="{Binding Path=Custo}"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button x:Name="btnCobranca" Content="GERAR COBRANCA" Margin="217,9,0,0" VerticalAlignment="Top" Click="btnCobranca_Click" HorizontalAlignment="Left" Width="124" Background="White" FontWeight="Bold"/>
-        <Button x:Name="btnGerarPDF" Content="PDF" HorizontalAlignment="Left" Margin="350,9,0,0" VerticalAlignment="Top" Click="btnGerarPDF_Click" RenderTransformOrigin="0.476,0.637" Width="38" Background="#FFEC0000" Foreground="White" FontWeight="Bold"/>
+        <Button x:Name="BtnCobranca" Content="GERAR COBRANCA" Margin="217,9,0,0" VerticalAlignment="Top" Click="BtnCobranca_Click" HorizontalAlignment="Left" Width="124" Background="White" FontWeight="Bold"/>
+        <Button x:Name="BtnGerarPDF" Content="PDF" HorizontalAlignment="Left" Margin="350,9,0,0" VerticalAlignment="Top" Click="BtnGerarPDF_Click" RenderTransformOrigin="0.476,0.637" Width="38" Background="#FFEC0000" Foreground="White" FontWeight="Bold"/>
 
     </Grid>
 </Window>

@@ -34,7 +34,7 @@ namespace Custo
             }
             else
             {
-                Montar montarCusto = new Montar();
+                Montar montarCusto = new();
                 montarCusto.Show();
 
                 Sessao.JanelaMontar = true;
@@ -49,7 +49,7 @@ namespace Custo
             }
             else 
             {
-                Operacao operacao = new Operacao();
+                Processos operacao = new();
                 operacao.Show();
                 Sessao.JanelaCusto = true;
             }           
@@ -63,7 +63,7 @@ namespace Custo
             }
             else
             {
-                Parceiro parceiro = new Parceiro();
+                Parceiro parceiro = new();
                 parceiro.Show();
 
                 Sessao.JanelaParceiro = true;
@@ -78,7 +78,7 @@ namespace Custo
             }
             else
             {
-                Modelo model = new Modelo();
+                Modelos model = new();
                 model.Show();
 
                 Sessao.JanelaModelo = true;
@@ -93,7 +93,7 @@ namespace Custo
             }
             else
             {
-                Cobranca cobrar = new Cobranca();
+                Cobranca cobrar = new();
                 cobrar.Show();
 
                 Sessao.JanelaCobrar = true;
@@ -114,7 +114,7 @@ namespace Custo
                 }
                 else
                 {
-                    Usuario user = new Usuario();
+                    Usuario user = new();
                     user.Show();
 
                     Sessao.JanelaUsuario = true;

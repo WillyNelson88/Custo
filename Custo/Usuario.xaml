@@ -25,18 +25,18 @@
             </TextBox.Background>
         </TextBox>
         
-        <Button x:Name="btnExcluir" Content="EXCLUIR" Margin="275,95,0,0" VerticalAlignment="Top" Height="20" Click="btnExcluir_Click" HorizontalAlignment="Left" Width="104" Background="#FF7FC1EE" FontWeight="Bold"/>
-        <Button x:Name="btnAdicionar" Content="ADICIONAR" Margin="277,10,0,0" Height="20" VerticalAlignment="Top" Click="btnAdicionar_Click" HorizontalAlignment="Left" Width="102" Background="#FF7FC1EE" FontWeight="Bold"/>
-        <Button x:Name="btnEditar" Content="EDITAR" Margin="276,52,0,0" Height="20" VerticalAlignment="Top" Click="btnEditar_Click" HorizontalAlignment="Left" Width="103" Background="#FF7FC1EE" FontWeight="Bold"/>
+        <Button x:Name="BtnExcluir" Content="EXCLUIR" Margin="275,95,0,0" VerticalAlignment="Top" Height="20" Click="BtnExcluir_Click" HorizontalAlignment="Left" Width="104" Background="#FF7FC1EE" FontWeight="Bold"/>
+        <Button x:Name="BtnAdicionar" Content="ADICIONAR" Margin="277,10,0,0" Height="20" VerticalAlignment="Top" Click="BtnAdicionar_Click" HorizontalAlignment="Left" Width="102" Background="#FF7FC1EE" FontWeight="Bold"/>
+        <Button x:Name="BtnEditar" Content="EDITAR" Margin="276,52,0,0" Height="20" VerticalAlignment="Top" Click="BtnEditar_Click" HorizontalAlignment="Left" Width="103" Background="#FF7FC1EE" FontWeight="Bold"/>
 
-        <ComboBox x:Name="cbSituacao" HorizontalAlignment="Left" Margin="96,95,0,0" Width="136" Loaded="cbSituacao_Loaded" FontSize="12" Height="20" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CbSituacao" HorizontalAlignment="Left" Margin="96,95,0,0" Width="136" Loaded="CbSituacao_Loaded" FontSize="12" Height="20" VerticalAlignment="Top"/>
 
         <DataGrid x:Name="DataGridUsuarios" Margin="20,142,0,20"
             AutoGenerateColumns="False" 
                   GridLinesVisibility="Horizontal" 
                   IsReadOnly="True" 
                   SelectionMode="Single"
-                  SelectionChanged="DataGridOperacoes_SelectionChanged" 
+                  SelectionChanged="DataGridUsuarios_SelectionChanged" 
                   RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="358">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Width="30" Binding="{Binding Path=id}"/>

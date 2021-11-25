@@ -24,24 +24,24 @@
                   AutoGenerateColumns="False"
                   SelectionMode="Single">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="OC" Width="40" Binding="{Binding Path=oc}"/>
-                <DataGridTextColumn Header="TALÃO" Width="70" Binding="{Binding Path=talao}"/>
-                <DataGridTextColumn Header="CLIENTE" Width="100" Binding="{Binding Path=cliente}"/>
-                <DataGridTextColumn Header="COLEÇÃO" Width="65" Binding="{Binding Path=colecao}"/>
-                <DataGridTextColumn Header="REFERÊNCIA" Width="100" Binding="{Binding Path=referencia}"/>
-                <DataGridTextColumn Header="DESCRIÇÃO" Width="350" Binding="{Binding Path=descricao}"/>
-                <DataGridTextColumn Header="PREÇO" Width="70" Binding="{Binding Path=preco}"/>
+                <DataGridTextColumn Header="OC" Width="40" Binding="{Binding Path=Oc}"/>
+                <DataGridTextColumn Header="TALÃO" Width="70" Binding="{Binding Path=Talao}"/>
+                <DataGridTextColumn Header="CLIENTE" Width="100" Binding="{Binding Path=Cliente}"/>
+                <DataGridTextColumn Header="COLEÇÃO" Width="65" Binding="{Binding Path=Colecao}"/>
+                <DataGridTextColumn Header="REFERÊNCIA" Width="100" Binding="{Binding Path=Referencia}"/>
+                <DataGridTextColumn Header="DESCRIÇÃO" Width="350" Binding="{Binding Path=Descricao}"/>
+                <DataGridTextColumn Header="PREÇO" Width="70" Binding="{Binding Path=Preco}"/>
             </DataGrid.Columns>
         </DataGrid>
 
         <Label Content="Selecione uma coluna para buscar:" HorizontalAlignment="Left" Margin="10,16,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
 
-        <TextBox x:Name="txtBusca" HorizontalAlignment="Left" Margin="396,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Height="22" TextChanged="txtBusca_TextChanged" BorderBrush="Black">
+        <TextBox x:Name="TxtBusca" HorizontalAlignment="Left" Margin="396,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="409" Height="22" TextChanged="TxtBusca_TextChanged" BorderBrush="Black">
             <TextBox.Background>
                 <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
             </TextBox.Background>
         </TextBox>
-        <ComboBox x:Name="cbBusca" HorizontalAlignment="Left" Margin="214,17,0,0" VerticalAlignment="Top" Width="178" Loaded="cbBusca_Loaded"/>
+        <ComboBox x:Name="CbBusca" HorizontalAlignment="Left" Margin="214,17,0,0" VerticalAlignment="Top" Width="178" Loaded="CbBusca_Loaded"/>
 
     </Grid>
 </Window>

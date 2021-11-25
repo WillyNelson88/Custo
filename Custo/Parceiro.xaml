@@ -56,8 +56,8 @@
 
         </DataGrid>
         
-        <Button x:Name="btnIncluir" Content="ADICIONAR" Margin="10,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="btnIncluir_Click" Background="#FF7FC1EE" FontWeight="Bold" />
-        <Button x:Name="btnEditar" Content="EDITAR" Margin="138,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="btnEditar_Click" Background="#FF7FC1EE" FontWeight="Bold" />
-        <Button x:Name="btnExcluir" Content="EXCLUIR" Margin="268,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="btnExcluir_Click" Background="#FF7FC1EE" FontWeight="Bold" />
+        <Button x:Name="btnIncluir" Content="ADICIONAR" Margin="10,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="BtnIncluir_Click" Background="#FF7FC1EE" FontWeight="Bold" />
+        <Button x:Name="btnEditar" Content="EDITAR" Margin="138,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="BtnEditar_Click" Background="#FF7FC1EE" FontWeight="Bold" />
+        <Button x:Name="btnExcluir" Content="EXCLUIR" Margin="268,94,0,0" VerticalAlignment="Top" Height="20" HorizontalAlignment="Left" Width="103" Click="BtnExcluir_Click" Background="#FF7FC1EE" FontWeight="Bold" />
     </Grid>
 </Window>

@@ -1,4 +1,4 @@
-﻿<Window x:Class="Custo.Modelo"
+﻿<Window x:Class="Custo.Modelos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -27,16 +27,16 @@
                 </TransformGroup>
             </DataGrid.RenderTransform>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="OC" Width="40" Binding="{Binding Path=oc}"/>
-                <DataGridTextColumn Header="CLIENTE" Width="150" Binding="{Binding Path=cliente}"/>
-                <DataGridTextColumn Header="REFERÊNCIA" Width="150" Binding="{Binding Path=referencia}"/>
-                <DataGridTextColumn Header="COLEÇÃO" Width="65" Binding="{Binding Path=colecao}"/>
-                <DataGridTextColumn Header="DESCRIÇÃO" Width="250" Binding="{Binding Path=descricao}"/>
-                <DataGridTextColumn Header="PREÇO" Width="80" Binding="{Binding Path=preco}"/>
+                <DataGridTextColumn Header="OC" Width="40" Binding="{Binding Path=Oc}"/>
+                <DataGridTextColumn Header="CLIENTE" Width="150" Binding="{Binding Path=Cliente}"/>
+                <DataGridTextColumn Header="REFERÊNCIA" Width="150" Binding="{Binding Path=Referencia}"/>
+                <DataGridTextColumn Header="COLEÇÃO" Width="65" Binding="{Binding Path=Colecao}"/>
+                <DataGridTextColumn Header="DESCRIÇÃO" Width="250" Binding="{Binding Path=Descricao}"/>
+                <DataGridTextColumn Header="PREÇO" Width="80" Binding="{Binding Path=Preco}"/>
                 <DataGridTemplateColumn Header="Detalhes">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Detalhes" Click="btnDetalhe_Click"/>
+                            <Button Content="Detalhes" Click="BtnDetalhe_Click"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -44,7 +44,7 @@
         </DataGrid>
 
         <Label Content="Procurar Modelo:" HorizontalAlignment="Left" Margin="10,38,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <TextBox x:Name="txtBuscaModelo" Height="23" Margin="129,42,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txtBuscaModelo_TextChanged" BorderBrush="Black">
+        <TextBox x:Name="TxtBuscaModelo" Height="23" Margin="129,42,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="TxtBuscaModelo_TextChanged" BorderBrush="Black">
             <TextBox.Background>
                 <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
             </TextBox.Background>

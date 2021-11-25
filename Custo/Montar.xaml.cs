@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,120 +18,47 @@ namespace Custo
     /// Lógica interna para Montar.xaml
     /// </summary>
     public partial class Montar : Window
-    {
-
-        //ADO.NET
-        private SqlConnection connection; //Conexão com o sql server
-        private SqlCommand command;       // Execução de comando no sql server
-        private SqlDataReader lerDados; //Lê os resultados de um comando do sql executado no sql server
-
-        private string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=custo;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        private string query = string.Empty; //Usado para criar os comandos no sql
-
-        private List<Operacoes> listaProcessos;
+    {       
+        private List<Processo> listaProcessos;
         private List<Cliente> listaCliente;
-        private Operacoes operacao;
-        private List<Operacoes> listaOperacoesSelecionadas;
+        private Processo operacao;
+        private List<Processo> listaOperacoesSelecionadas;
+        private Banco dataBase;
 
         public Montar()
         {
             InitializeComponent();
-            readFromDatabase(null);
+            ReadFromDatabase(null);
 
-            listaOperacoesSelecionadas = new List<Operacoes>();
+            listaOperacoesSelecionadas = new List<Processo>();
             GridMontar.ItemsSource = listaOperacoesSelecionadas;
         }
 
-        //Ler dados da tabela e exibir na grid
-        private void readFromDatabase(string where)
+        //Ler dados da tabela e exibir na grid;
+        private void ReadFromDatabase(string where)
         {
-            try
-            {
+            dataBase = new Banco();
 
-                listaProcessos = new List<Operacoes>();
+            listaProcessos = new List<Processo>();
 
-                using (connection = new SqlConnection())
-                {
-                    connection.ConnectionString = connectionString;
+            listaProcessos = dataBase.GetOperacoes(where);
 
-                    if (where != null)
-                    {
-                       query = "SELECT * FROM operacao WHERE operacao LIKE '%" + where + "%';";
-                    }
-                    else 
-                    {
-                       query = "SELECT * FROM operacao;";
-                    }
-
-                    using (command = new SqlCommand(query, connection))
-                    {
-                        connection.Open();
-
-                        using (lerDados = command.ExecuteReader())
-                        {
-                            while (lerDados.Read())
-                            {
-                                operacao = new Operacoes();
-
-                                operacao.id = lerDados.GetInt32(0);
-                                operacao.Operacao = lerDados.GetString(2);
-                                operacao.Custo = lerDados.GetDecimal(3);
-                                operacao.Observacoes = lerDados.GetString(4);
-
-                                listaProcessos.Add(operacao);
-                            }
-                        }
-                    }
-                }
-
-                GridOperacoes.ItemsSource = listaProcessos;
-            }
-            catch (SqlException se)
-            {
-                MessageBox.Show(se.Message);
-            }
+            GridOperacoes.ItemsSource = listaProcessos;       
         }
 
+        //Carregar a combo box cliente;
         private void CB_Cliente_Loaded(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                listaCliente = new List<Cliente>();
+            dataBase = new();
 
-                using (connection = new SqlConnection())
-                {
-                    connection.ConnectionString = connectionString;
+            listaCliente = new();
 
-                    query = "SELECT id, cliente FROM cliente;";
+            listaCliente = dataBase.CbCliente();
 
-                    using (command = new SqlCommand(query, connection))
-                    {
-                        connection.Open();
-
-                        using (lerDados = command.ExecuteReader())
-                        {
-                            while (lerDados.Read())
-                            {
-                                Cliente cli = new Cliente();
-
-                                cli.id = lerDados.GetInt32(0);
-                                cli.Cli = lerDados.GetString(1);
-
-                                listaCliente.Add(cli);                                
-                            }
-                        }
-                    }
-
-                    CB_Cliente.ItemsSource = listaCliente;
-                }
-                    
-            }
-            catch (SqlException se)
-            {
-                MessageBox.Show(se.Message);
-            }
+            CB_Cliente.ItemsSource = listaCliente;
         }
 
+        //Carregar a combo box fase;
         private void CB_FASE_Loaded(object sender, RoutedEventArgs e)
         {
             CB_FASE.Items.Add("CORTE");
@@ -143,20 +69,21 @@ namespace Custo
             CB_FASE.Items.Add("LINHA");
         }
 
-        private void GridOperacoes_SelectionChanged_1(object sender, SelectionChangedEventArgs e) //Envia os dados da linha selecionada da GridOperações para as textBox para montar o custo 
+        //Seleciona os dados da grid de operações para as text box de montar os custos;
+        private void GridOperacoes_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
         {
             if (GridOperacoes.SelectedItem != null)
             {
+                var operacao = (Processo)GridOperacoes.SelectedItem;
 
-                var operacao = (Operacoes)GridOperacoes.SelectedItem;
-
-                txtId.Text = operacao.id.ToString();
+                txtId.Text = operacao.Id.ToString();
                 txtCusto.Text = operacao.Custo.ToString();
                 txtOperacao.Text = operacao.Operacao;
             }
         }
 
-        private void btnIncluir_Click(object sender, RoutedEventArgs e) //inclui os dados na grid montar
+        //Inclui os dados das text box na grid de de montar os custos;
+        private void BtnIncluir_Click(object sender, RoutedEventArgs e) //inclui os dados na grid montar
         {
             if (string.IsNullOrWhiteSpace(txtFreq.Text) || string.IsNullOrWhiteSpace(CB_FASE.Text))
             {
@@ -164,13 +91,11 @@ namespace Custo
             }
             else
             {
-                //listaProcessos = new List<Operacoes>();
-
-                operacao = new Operacoes();
+                operacao = new Processo();
 
                 Decimal custo = Decimal.Parse(txtCusto.Text) * Int32.Parse(txtFreq.Text);
 
-                operacao.id = Int32.Parse(txtId.Text);
+                operacao.Id = Int32.Parse(txtId.Text);
                 operacao.Operacao = txtOperacao.Text;
                 operacao.Fase = CB_FASE.Text;
                 operacao.Custo = custo;
@@ -181,9 +106,16 @@ namespace Custo
                 CollectionViewSource.GetDefaultView(GridMontar.ItemsSource).Refresh();
 
                 Soma(CB_FASE.Text, custo);
+
+                txtId.Clear();
+                txtOperacao.Clear();
+                txtFreq.Text = "1";
+                CB_FASE.SelectedIndex = -1;
+                txtCusto.Clear();
             }            
         }
 
+        //Método para somar as operações de costura separada das operações das outras fases;
         private void Soma(String fase, Decimal custo)
         {
             if (fase == "CORTE")
@@ -197,72 +129,30 @@ namespace Custo
             }
         }//Soma o total da costura e o total da costura com o corte
 
-        private void btnSalvar_Click(object sender, RoutedEventArgs e)
+        //Salva os dados nas tabelas modelo e montar_custo;
+        private void BtnSalvar_Click(object sender, RoutedEventArgs e)
         {
-            int num = GridMontar.Items.Count; //contar o total de linhas
+            int codCli = Convert.ToInt32(CB_Cliente.SelectedValue); 
+            decimal preco = Decimal.Parse(txtTotal.Text);
 
-            try
+            dataBase = new();
+
+            int oc = dataBase.CriarModelo(txtRef.Text, txtCol.Text, codCli, txtDesc.Text, preco);
+
+            foreach (var operacao in listaOperacoesSelecionadas)
             {
-                using (connection = new SqlConnection())
-                {
-                    connection.ConnectionString = connectionString;
-
-                    query = @"INSERT INTO modelo (data_criacao, referencia, colecao, id_cliente, descricao, preco)
-                              VALUES (@DATA, @REF, @COL, @CLI, @DESC, @PRECO) SELECT SCOPE_IDENTITY();";
-
-                    int codCli = Convert.ToInt32(CB_Cliente.SelectedValue);
-                    string dia = DateTime.Now.ToString("dd/MM/yyyy");
-                    string preco = txtTotal.Text;                    
-
-                    command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@DATA", dia);
-                    command.Parameters.AddWithValue("@COL", txtCol.Text);
-                    command.Parameters.AddWithValue("@REF", txtRef.Text);
-                    command.Parameters.AddWithValue("@CLI", codCli);
-                    command.Parameters.AddWithValue("@DESC", txtDesc.Text);
-                    command.Parameters.AddWithValue("@PRECO", Decimal.Parse(preco));
-
-                    connection.Open();
-
-                    Int32 oc = Convert.ToInt32(command.ExecuteScalar());
-
-                    query = @"INSERT INTO montar_custo (oc, id_operacao, freq, fase, total)
-                              VALUES (@OC, @ID_OPERACAO, @FREQ, @FASE, @TOTAL);";
-
-                    foreach (var operacao in listaOperacoesSelecionadas)
-                    {
-                        command = new SqlCommand(query, connection);
-
-                        command.Parameters.AddWithValue("@oc", oc);
-                        command.Parameters.AddWithValue("@ID_OPERACAO", operacao.id);
-                        command.Parameters.AddWithValue("@FREQ", operacao.Freq);
-                        command.Parameters.AddWithValue("@FASE", operacao.Fase);
-                        command.Parameters.AddWithValue("@TOTAL", operacao.Custo);
-
-                        command.ExecuteNonQuery();
-                    }
-                    
-                }
-                MessageBox.Show("Custo criado com sucesso!");
+                dataBase.MontaPreco(oc, operacao.Id, operacao.Freq, operacao.Fase, operacao.Custo);
             }
-            catch (SqlException se)
-            {
-                MessageBox.Show(se.Message);
-            }
-            finally
-            {
-                connection.Close();
-                connection = null;
-                command = null;
-                this.Close();
-     
-            }
-            
-        }//insere os dados da tabela modelo  e montar custo
 
+            MessageBox.Show("Custo criado com sucesso!");
+
+            this.Close(); //Fechando a aplicação porque não consegui limpar os dados da dataGrid;*/
+        }
+
+        //Exclui uma linha da tabela de montar os custos;
         private void MenuItemExcluir_Click(object sender, RoutedEventArgs e)//Excluir uma linha selecionada da Grid Montar
         {
-            var operacao = (Operacoes)GridMontar.SelectedItem;
+            var operacao = (Processo)GridMontar.SelectedItem;
 
             string fase = operacao.Fase;
             decimal custo = operacao.Custo;
@@ -281,11 +171,13 @@ namespace Custo
             CollectionViewSource.GetDefaultView(GridMontar.ItemsSource).Refresh();
         }
 
-        private void txtBusca_TextChanged(object sender, TextChangedEventArgs e)
+        //Buscar os dados com condição;
+        private void TxtBusca_TextChanged(object sender, TextChangedEventArgs e)
         {
-            readFromDatabase(txtBusca.Text);
+            ReadFromDatabase(TxtBusca.Text);
         }
 
+        //Validar se a janela está aberta ou não;
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);

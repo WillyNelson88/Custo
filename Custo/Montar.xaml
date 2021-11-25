@@ -54,7 +54,7 @@
                 <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
             </TextBox.Background>
         </TextBox>
-        <ComboBox x:Name="CB_Cliente" Margin="100,23,0,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Left" Width="193" Loaded="CB_Cliente_Loaded" FontSize="14" SelectedValuePath="id" DisplayMemberPath="Cli" BorderBrush="Black">
+        <ComboBox x:Name="CB_Cliente" Margin="100,23,0,0" VerticalAlignment="Top" Height="24" HorizontalAlignment="Left" Width="193" Loaded="CB_Cliente_Loaded" FontSize="14" SelectedValuePath="Id" DisplayMemberPath="Cli" BorderBrush="Black">
             <ComboBox.Background>
                 <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
             </ComboBox.Background>
@@ -130,7 +130,7 @@
                 <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
             </TextBox.Background>
         </TextBox>
-        <TextBox x:Name="txtBusca" Margin="760,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left" Width="577" TextChanged="txtBusca_TextChanged" BorderBrush="Black">
+        <TextBox x:Name="TxtBusca" Margin="760,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" HorizontalAlignment="Left" Width="577" TextChanged="TxtBusca_TextChanged" BorderBrush="Black">
             <TextBox.Background>
                 <SolidColorBrush Color="#FFFBF8F8" Opacity="0.8"/>
             </TextBox.Background>
@@ -152,8 +152,8 @@
             </ComboBox.Background>
         </ComboBox>
 
-        <Button x:Name="btnIncluir" Content="INCLUIR" HorizontalAlignment="Left" Margin="472,192,0,0" VerticalAlignment="Top" Height="25" Width="129" Click="btnIncluir_Click" FontWeight="Bold" Background="#FF7FC1EE"/>
-        <Button x:Name="btnSalvar" Content="SALVAR" HorizontalAlignment="Left" Margin="471,604,0,0" VerticalAlignment="Top" Height="25" Width="129" Click="btnSalvar_Click" FontWeight="Bold" Background="#FF7FC1EE"/>
+        <Button x:Name="btnIncluir" Content="INCLUIR" HorizontalAlignment="Left" Margin="472,192,0,0" VerticalAlignment="Top" Height="25" Width="129" Click="BtnIncluir_Click" FontWeight="Bold" Background="#FF7FC1EE"/>
+        <Button x:Name="btnSalvar" Content="SALVAR" HorizontalAlignment="Left" Margin="471,604,0,0" VerticalAlignment="Top" Height="25" Width="129" Click="BtnSalvar_Click" FontWeight="Bold" Background="#FF7FC1EE"/>
 
     </Grid>
 </Window>
