@@ -512,7 +512,7 @@ namespace Custo
                 {
                     connection.ConnectionString = connectionString;
 
-                    query = @"SELECT mo.oc, mo.data_criacao, mo.referencia, mo.colecao, cli.cliente, mo.descricao
+                    query = @"SELECT mo.oc, mo.data_criacao, mo.referencia, mo.colecao, cli.cliente, mo.descricao, mo.preco
                               FROM modelo mo, cliente cli 
                               WHERE mo.id_cliente = cli.id
                               AND oc = " + oc;
@@ -533,6 +533,7 @@ namespace Custo
                                 modelo.Colecao = lerDados.GetString(3);
                                 modelo.Cliente = lerDados.GetString(4);
                                 modelo.Descricao = lerDados.GetString(5);
+                                modelo.Preco = lerDados.GetDecimal(6);
                             }
                         }
                     }

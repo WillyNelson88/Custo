@@ -48,6 +48,8 @@ namespace Custo
             txtCliente.Text = modelo.Cliente;
             txtDescricao.Text = modelo.Descricao;
 
+            MessageBox.Show(modelo.Preco.ToString());
+
             Operacoes(oc);
         }
 
