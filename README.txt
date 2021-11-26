@@ -1,22 +1,21 @@
-Pacotes do NuGet necessários:
+Pacotes do NuGet necessÃ¡rios:
 
-1º System.DataSqlClient por Microsoft
-2º iTextSharp por bruno lowagie
-3° BCrypt.NET por ChrisMckee
+1Âº System.DataSqlClient por Microsoft
+2Âº iTextSharp por bruno lowagie
+3Â° BCrypt.NET por ChrisMckee
 
-Ver arquivo SQL para criar banco de dados e inserir usuário admin.
+Ver arquivo SQL para criar banco de dados e inserir usuÃ¡rio admin.
 
 Usando o sistema.
 
-1º Inserir operações de costura e seus devidos valores;
-2º Inserir um cliente;
+1Âº Inserir operaÃ§Ãµes de costura e seus devidos valores;
+2Âº Inserir um cliente;
 
-3º Para montar um custo, selecionar a operação da  grid direita, ao carregar nas text box, escolher a fase colocar um frequência se necessário, e incluir na girid, então é só salvar;
+3Âº Para montar um custo, selecionar a operaÃ§Ã£o da  grid direita, ao carregar nas text box, escolher a fase colocar um frequÃªncia se necessÃ¡rio, e incluir na grid, entÃ£o Ã© sÃ³ salvar;
 Deve ser preenchido os dados referentes ao modelo;
 
-4º No menu modelos, escolher um modelo, clicar em detalhes, será detalhado as operações do modelo, para gerar uma cobrança basta clicar em GERAR COBRANÇA  e preencher as gerar com auxílio da
-grid esquerda, pode ser acrescentado um percentual em cima do custo do processo inserir todas as operações do modelo na grid direita, ao final colocar o número do talão, o tipo do produto e salvar;
+4Âº No menu modelos, escolher um modelo, clicar em detalhes, serÃ¡ detalhado as operaÃ§Ãµes do modelo, para gerar uma cobranÃ§a basta clicar em GERAR COBRANÃ‡A, na nova janela preencher preencher a grid da direita com auxÃ­lio da grid esquerda, pode ser acrescentado um percentual em cima do custo do processo inserir todas as operaÃ§Ãµes do modelo na grid direita, ao final colocar o nÃºmero do talÃ£o, o tipo do produto e salvar;
 
-5º Para criar usuários basta acessar a o menu usuários e criar, alterar ou excluir um usuário. Usuários em situação "USER" não podem acessar o menu de usuários;
+5Âº Para criar usuÃ¡rios basta acessar a o menu usuÃ¡rios e criar, alterar ou excluir um usuÃ¡rio. UsuÃ¡rios em situaÃ§Ã£o "USER" nÃ£o podem acessar o menu de usuÃ¡rios;
 
-6º E necessário criar uma pasta no disco local C: chamada pdf, para criar e exibir os arquivos pdf
+6Âº E necessÃ¡rio criar uma pasta no disco local C: chamada pdf, para criar e exibir os arquivos pdf
