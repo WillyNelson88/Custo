@@ -34,6 +34,7 @@ namespace Custo
             Detalhar(oc);
         }
 
+        //Traz as informações do modelo;
         private void Detalhar(int oc)
         {
             dataBase = new();
@@ -48,11 +49,10 @@ namespace Custo
             txtCliente.Text = modelo.Cliente;
             txtDescricao.Text = modelo.Descricao;
 
-            MessageBox.Show(modelo.Preco.ToString());
-
             Operacoes(oc);
         }
 
+        //Traz as operações do modelo
         public void Operacoes(int oc)
         {
             dataBase = new();
@@ -62,6 +62,7 @@ namespace Custo
             DataGridDetalhes.ItemsSource = listaProcessos;           
         }
 
+        //Leva para a janela de montar a cobrança
         private void BtnCobranca_Click(object sender, RoutedEventArgs e)
         {
             int oc = modelo.Oc;
@@ -71,6 +72,7 @@ namespace Custo
             cobranca.Show();
         }
 
+        //Gera o arquivo pdf
         private void BtnGerarPDF_Click(object sender, RoutedEventArgs e)
         {
             int oc = modelo.Oc;

@@ -29,6 +29,7 @@ namespace Custo
             ReadFromDatabase(null);
         }
 
+        //Busca os modelos na tabela modelos
         private void ReadFromDatabase(string where)
         {
             dataBase = new();
@@ -40,6 +41,7 @@ namespace Custo
             DataGridModelos.ItemsSource = listaModelos;            
         }
 
+        //Abre a janela de detahes gerar pdf e montar cobraça
         private void BtnDetalhe_Click(object sender, RoutedEventArgs e)
         {
             var modelo = (Modelo)DataGridModelos.SelectedItem;
@@ -48,14 +50,15 @@ namespace Custo
 
             var detail = new Detahes(oc);
             detail.Show();      
-
         }
 
+        //Fazer a busca
         private void TxtBuscaModelo_TextChanged(object sender, TextChangedEventArgs e)
         {
             ReadFromDatabase(TxtBuscaModelo.Text);
         }
 
+        //Fecha a sessão
         protected override void OnClosed(EventArgs e)
         {
             base.OnClosed(e);

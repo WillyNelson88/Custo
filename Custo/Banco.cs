@@ -725,7 +725,8 @@ namespace Custo
 
             return listaProcessos;
         }
-
+        
+        // Método para listar os usuários
         public List<Login> GetUsuario()
         {
             try
